@@ -25,9 +25,11 @@ var adapterFile = {
 
 
 function initGitDiff(config, emitter) {
-    var cmdline = 'git diff --name-only origin/master';
-    // config.files.unshift({pattern: __dirname + GIT_DIFF_PATH, included: true, watched: false});
-    // config.preprocessors['/__git_diff/__git_diff.js'] = ['git-diff'];
+    var cmdline = 'git diff --name-only';
+
+    if (config.gitDiffConfig && config.gitDiffConfig.ref) {
+        cmdline += ' -- "' + config.gitDiffConfig.ref + '"';
+    }
 
     emitter.on('file_list_modified', function(filesPromise) {
         filesPromise.then(function(files) {
