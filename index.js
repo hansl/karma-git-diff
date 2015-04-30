@@ -44,6 +44,7 @@ function initGitDiff(config, emitter) {
             files.served.push(adapterFile);
 
             fs.writeFileSync(adapterFile.contentPath, content);
+            adapterFile.content = content;
             adapterFile.mtime = new Date();
         });
     });
