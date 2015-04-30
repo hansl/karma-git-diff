@@ -1,0 +1,28 @@
+{
+  "name": "karma-git-diff",
+  "version": "1.0.0",
+  "description": "A Karma plugin to export the result of git diff to JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hansl/karma-git-diff.git"
+  },
+  "keywords": [
+    "karma",
+    "git",
+    "git-diff",
+    "incremental"
+  ],
+  "author": "Hans Larsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hansl/karma-git-diff/issues"
+  },
+  "homepage": "https://github.com/hansl/karma-git-diff",
+  "dependencies": {
+    "exec-sync": "^0.1.6"
+  }
+}
