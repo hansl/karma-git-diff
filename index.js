@@ -28,7 +28,7 @@ function initGitDiff(config, emitter) {
     var cmdline = 'git diff --name-only';
 
     if (config.gitDiffConfig && config.gitDiffConfig.ref) {
-        cmdline += ' -- "' + config.gitDiffConfig.ref + '"';
+        cmdline += ' "' + config.gitDiffConfig.ref + '"';
     }
 
     emitter.on('file_list_modified', function(filesPromise) {
