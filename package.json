@@ -1,6 +1,6 @@
 {
   "name": "karma-git-diff",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Karma plugin to export the result of git diff to JavaScript.",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/hansl/karma-git-diff",
   "dependencies": {
-    "exec-sync": "^0.1.6"
+    "execSync": "^1.0.2"
   }
 }
