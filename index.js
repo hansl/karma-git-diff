@@ -11,7 +11,7 @@ var TEMP_DIR = process.env.TMPDIR || process.env.TMP || process.env.TEMP || '/tm
 
 function exec(cmd) {
     if (execSync) {
-        return execSync(cmd);
+        return '' + execSync(cmd);
     }
     else if (sh.exec) {
         var result = sh.exec('(' + cmd + ') 2> /dev/null');
