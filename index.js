@@ -2,25 +2,14 @@ var fs = require('fs');
 var path = require('path');
 var childProcess = require('child_process');
 var execSync = childProcess.execSync;
-var sh = require('execSync').exec;
+
+if (!execSync) {
+    throw new Error('Need Node 0.12 or newer.');
+}
 
 
 var GIT_DIFF_PATH = '/__git_diff_adapter.js';
 var TEMP_DIR = process.env.TMPDIR || process.env.TMP || process.env.TEMP || '/tmp';
-
-
-function exec(cmd) {
-    if (execSync) {
-        return '' + execSync(cmd);
-    }
-    else if (sh.exec) {
-        var result = sh.exec('(' + cmd + ') 2> /dev/null');
-        return result.stdout;
-    }
-    else {
-        throw new Error('No execSync found.');
-    }
-}
 
 
 function uid() {
